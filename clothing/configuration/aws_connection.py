@@ -8,7 +8,7 @@ from clothing.constants import (
     REGION_NAME,
 )
 
-
+# This class is used to create a singleton S3 client and resource that can be used throughout the application.
 class S3Client:
     s3_client = None
     s3_resource = None
