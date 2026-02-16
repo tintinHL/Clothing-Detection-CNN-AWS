@@ -9,12 +9,14 @@ from clothing.constants import *
 from zipfile import ZipFile
 
 
+# This class is used to ingest data from the s3 bucket, unzip the data and split it into train, test and valid data and return the file path of the train, test and valid data after ingestion.
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig):
         self.data_ingestion_config = data_ingestion_config
         
         self.s3 = S3Sync()
 
+# This method is used to get the data from the s3 bucket and save it in the local folder
     def get_data_from_s3(self) -> None:
         try:
             logging.info("Entered the get_data_from_s3 method of Data ingestion class")
@@ -27,7 +29,7 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-
+# Method for unzippin the data and creating a split
     def unzip_and_clean(self):
         logging.info("Entered the unzip_and_clean method of Data ingestion class")
         try:
@@ -43,7 +45,7 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-
+# method responsible for running methods 1 by 1
     def initiate_data_ingestion(self) -> DataIngestionArtifacts:
         logging.info("Entered the initiate_data_ingestion method of Data ingestion class")
         try:
@@ -64,6 +66,6 @@ class DataIngestion:
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
 
             return data_ingestion_artifact
-
+        # Exception handling
         except Exception as e:
             raise CustomException(e, sys) from e

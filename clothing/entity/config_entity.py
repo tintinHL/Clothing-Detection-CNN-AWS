@@ -4,10 +4,11 @@ from clothing.constants import *
 import os
 
 
+# Class that helps return a class variable with constractor
 @dataclass
 class DataIngestionConfig:
     def __init__(self):
-        self.BUCKET_NAME: str = BUCKET_NAME
+        self.BUCKET_NAME: str = BUCKET_NAME #Variable name = value
         self.ZIP_FILE_NAME:str = ZIP_FILE_NAME
         self.S3_DATA_DIR = DATA_DIR
         self.DATA_INGESTION_ARTIFACTS_DIR: str = os.path.join(from_root(), ARTIFACTS_DIR, DATA_INGESTION_ARTIFACTS_DIR,DATA_DIR)

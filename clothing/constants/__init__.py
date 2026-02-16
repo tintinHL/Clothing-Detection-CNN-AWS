@@ -69,4 +69,4 @@ PREDICTION_CLASSES = [ 'bag', 'dress', 'hat', 'jacket', 'pants', 'shirt', 'shoe'
 AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
 AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
 # Setting the region to UK for lowest latency
-REGION_NAME = "eu-north-1"
+REGION_NAME = "eu-west-2"

@@ -22,7 +22,7 @@ app.add_middleware(
 async def index():
     return RedirectResponse(url="/docs")
 
-
+# Executing the pipeline
 @app.get("/train")
 async def training():
     try:
