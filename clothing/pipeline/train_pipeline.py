@@ -18,7 +18,7 @@ class TrainPipeline:
         self.model_evaluation_config = ModelEvaluationConfig()
         self.model_pusher_config = ModelPusherConfig()
 
-    
+    # Methods for starting data ingestion and returning the data ingestion artifacts which is the file path of the train, test and valid data after ingestion.
     def start_data_ingestion(self) -> DataIngestionArtifacts:
         logging.info("Entered the start_data_ingestion method of TrainPipeline class")
         try:
@@ -101,7 +101,7 @@ class TrainPipeline:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-    
+    # Method responsible for running the whole pipeline by calling the methods 1 by 1 and passing the artifacts from one method to another method.
     def run_pipeline(self) -> None:
         logging.info("Entered the run_pipeline method of TrainPipeline class")
         try:

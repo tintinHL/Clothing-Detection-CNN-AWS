@@ -4,7 +4,7 @@ from clothing.constants import *
 import os
 
 
-# Class that helps return a class variable with constractor
+# Class that helps return a class variable with constractor to access the variable in the class. This class
 @dataclass
 class DataIngestionConfig:
     def __init__(self):

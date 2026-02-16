@@ -6,10 +6,10 @@ TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 
 # Data Ingestion Constants
 ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
-BUCKET_NAME = 'clothing-apparel'
+BUCKET_NAME = 'clothing-test12 '
 SAVED_MODEL_DIR = "PredictModel"
-ZIP_FILE_NAME = 'clothing-dataset.zip'
-DATA_DIR = "data"
+ZIP_FILE_NAME = 'data.zip'
+# This is the name of the folder in the s3 bucket with data
 ANNOTATIONS_COCO_JSON_FILE = '_annotations.coco.json'
 
 INPUT_SIZE = 416
@@ -28,7 +28,7 @@ DATA_INGESTION_TEST_DIR = 'test'
 DATA_INGESTION_VALID_DIR = 'valid'
 
 
-# Data transformation constants 
+# Data transformation constants from config
 DATA_TRANSFORMATION_ARTIFACTS_DIR = 'DataTransformationArtifacts'
 DATA_TRANSFORMATION_TRAIN_DIR = 'Train'
 DATA_TRANSFORMATION_TEST_DIR = 'Test'

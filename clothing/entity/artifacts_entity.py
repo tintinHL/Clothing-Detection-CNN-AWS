@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-# Data ingestion artifacts
+# Data ingestion artifacts return the file path of the train, test and valid data after ingestion
 @dataclass
 class DataIngestionArtifacts:
     train_file_path: str
