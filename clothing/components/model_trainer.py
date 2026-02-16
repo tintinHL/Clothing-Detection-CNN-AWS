@@ -14,7 +14,7 @@ from clothing.entity.artifacts_entity import DataTransformationArtifacts, ModelT
 from clothing.ml.detection.engine import train_one_epoch
 from torchvision.models.detection import retinanet_resnet50_fpn_v2
 
-
+# Initialising transformation artifact
 class ModelTrainer:
     def __init__(self, data_transformation_artifacts: DataTransformationArtifacts,
                     model_trainer_config: ModelTrainerConfig):
@@ -27,7 +27,7 @@ class ModelTrainer:
         self.model_trainer_config = model_trainer_config
 
 
-    
+    # training method
     def train(self, model, optimizer, loader, device, epoch):
         try:
             model.to(device)
@@ -60,7 +60,7 @@ class ModelTrainer:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-    
+   # collate function for the dataloader 
     @staticmethod
     def collate_fn(batch):
         """

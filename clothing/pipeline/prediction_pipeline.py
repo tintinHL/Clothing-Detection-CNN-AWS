@@ -17,7 +17,7 @@ class PredictionPipeline:
         self.bucket_name = BUCKET_NAME
         self.model_evaluation_config =ModelEvaluationConfig()
 
-    
+    # method for loading the image and converting it to tensor
     def image_loader(self, image_bytes):
         """load image, returns cuda tensor"""
         logging.info("Entered the image_loader method of PredictionPipeline class")
@@ -34,7 +34,7 @@ class PredictionPipeline:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-    
+    # method for getting the model from s3 bucket and saving it in the local folder
     def get_model_from_s3(self) -> str:
         """
         Method Name :   predict
@@ -88,7 +88,7 @@ class PredictionPipeline:
             raise CustomException(e, sys) from e
 
 
-    
+    # method for running the pipeline
     def run_pipeline(self, data):
         logging.info("Entered the run_pipeline method of PredictionPipeline class")
         try:

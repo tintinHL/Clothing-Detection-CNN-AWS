@@ -6,7 +6,7 @@ class DataIngestionArtifacts:
     test_file_path: str
     valid_file_path: str
 
-
+# 2 paths and returning the number of classes (11)
 @dataclass
 class DataTransformationArtifacts:
     transformed_train_object: str 

@@ -18,7 +18,7 @@ class DataTransformation:
         self.data_transformation_config = data_transformation_config
         self.data_ingestion_artifact = data_ingestion_artifact
 
-
+# method for returning the number of classes
     def number_of_classes(self):
 
         try:
@@ -32,7 +32,7 @@ class DataTransformation:
         except Exception as e:
             raise CustomException(e, sys) from e
 
-
+# method for getting the transforms for the train and test data augmentation
     def get_transforms(self,train=False):
         try: 
             if train:

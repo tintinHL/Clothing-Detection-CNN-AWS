@@ -130,7 +130,7 @@ class ModelEvaluation:
             s3_model = self.get_model_from_s3()
 
             logging.info(f"{s3_model}")
-
+            # comparison between the model from s3 and the current trained model, if the s3 model is not there then we will accept the current model, if the s3 model is there then we will compare the losses and accept the model with lower loss
             is_model_accepted = False
             s3_all_losses = None 
             print(f"{os.path.isfile(s3_model)}")

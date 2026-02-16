@@ -5,7 +5,7 @@ from clothing.entity.config_entity import ModelPusherConfig
 from clothing.entity.artifacts_entity import ModelPusherArtifacts
 from clothing.configuration.s3_syncer import S3Sync
 
-
+# This class is used to push the trained model to the s3 bucket after training and evaluation.
 class ModelPusher:
 
     def __init__(self, model_pusher_config: ModelPusherConfig):
