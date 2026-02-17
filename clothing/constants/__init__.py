@@ -6,9 +6,10 @@ TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 
 # Data Ingestion Constants
 ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
-BUCKET_NAME = 'clothing-test12 '
+BUCKET_NAME = 'clothing-test12'
 SAVED_MODEL_DIR = "PredictModel"
 ZIP_FILE_NAME = 'data.zip'
+DATA_DIR = "data"
 # This is the name of the folder in the s3 bucket with data
 ANNOTATIONS_COCO_JSON_FILE = '_annotations.coco.json'
 

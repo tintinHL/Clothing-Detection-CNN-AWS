@@ -22,8 +22,11 @@ class DataIngestion:
             logging.info("Entered the get_data_from_s3 method of Data ingestion class")
             os.makedirs(self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR, exist_ok=True)
 
-            self.s3.sync_folder_from_s3(folder=self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR,bucket_name=self.data_ingestion_config.BUCKET_NAME,bucket_folder_name=self.data_ingestion_config.S3_DATA_DIR)
+            #debugging log
+            logging.info(f"Created the directory {self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR} for storing the data ingestion artifacts")
+            logging.info(f"folder= {self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR} bucket_name= {self.data_ingestion_config.BUCKET_NAME} bucket_folder_name= {self.data_ingestion_config.S3_DATA_DIR}")
 
+            self.s3.sync_folder_from_s3(folder=self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR,bucket_name=self.data_ingestion_config.BUCKET_NAME,bucket_folder_name=self.data_ingestion_config.S3_DATA_DIR)
 
             logging.info("Exited the get_data_from_s3 method of Data ingestion class")
         except Exception as e:
@@ -34,10 +37,12 @@ class DataIngestion:
         logging.info("Entered the unzip_and_clean method of Data ingestion class")
         try:
             zip_file_name = os.path.join(self.data_ingestion_config.DATA_INGESTION_ARTIFACTS_DIR,self.data_ingestion_config.ZIP_FILE_NAME)
+            logging.info(f"Unzipping the file 1 {zip_file_name}") # debugging log
 
             zip_obj = ZipFile(zip_file_name)
-
+            logging.info(f"Unzipping the file 2 {zip_file_name}")
             zip_obj.extractall(path=self.data_ingestion_config.ZIP_FILE_DIR)
+            logging.info(f"Unzipping the file 3 {zip_file_name}")
 
             logging.info("Exited the unzip_and_clean method of Data ingestion class")
 
